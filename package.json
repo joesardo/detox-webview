@@ -1,0 +1,19 @@
+{
+  "name": "detox-webview",
+  "version": "1.0.0",
+  "description": "add on for wix/detox to assist with webview automation",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/joesardo/detox-webview.git"
+  },
+  "author": "Joseph Sardo",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/joesardo/detox-webview/issues"
+  },
+  "homepage": "https://github.com/joesardo/detox-webview#readme"
+}
