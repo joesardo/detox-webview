@@ -1,11 +1,8 @@
 const detox = require('detox');
-const { device, expect, element, by } = detox;
+const { device, element, by } = detox;
 
 class DetoxWebView {
   async switchToWebView(webViewIdentifier) {
-    await device.launchApp({ newInstance: false });
-    await device.reloadReactNative();
-
     await device.waitFor(element(by.id(webViewIdentifier))).toBeVisible().withTimeout(5000);
 
     const webViewHandles = await element.all(by.webView()).get();
