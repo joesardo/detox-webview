@@ -8,7 +8,7 @@ declare module 'detox-webview' {
      | 'href' 
      | 'hrefContains' 
      | 'tag'
-     , element: string);
+     , element: string): Promise<any>;
   export function expectWebElement(matcher: 
      'id' 
      | 'className' 

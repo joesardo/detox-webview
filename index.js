@@ -1,46 +1,36 @@
 const detox = require('detox');
 const { expect, web, by } = detox;
 
-let innerElement;
-
 const switchToWebViewElement = async (matcher, element) => {
   switch (matcher) {
     case 'id':
-      innerElement = web.element(by.web.id(element));
-      break;
+      return web.element(by.web.id(element));
   
     case 'className':
-      innerElement = web.element(by.web.className(element));
-      break;
+      return web.element(by.web.className(element));
     
     case 'cssSelector':
-      innerElement = web.element(by.web.cssSelector(element));
-      break;
+      return web.element(by.web.cssSelector(element));
 
     case 'elementName':
-      innerElement = web.element(by.web.name(element));
-      break;
+      return web.element(by.web.name(element));
     
     case 'xpath':
-      innerElement = web.element(by.web.xpath(element));
-      break;
+      return web.element(by.web.xpath(element));
     
     case 'href':
-      innerElement = web.element(by.web.href(element));
-      break;
+      return web.element(by.web.href(element));
 
     case 'hrefContains':
-      innerElement = web.element(by.web.hrefContains(element));
-      break;
+      return web.element(by.web.hrefContains(element));
     
     case 'tag':
-      innerElement = web.element(by.web.tag(element));
-      break;
+      return web.element(by.web.tag(element));
   }
 }
 
 const expectWebElement = async (matcher, element, expectation, text = '') => {
-  await switchToWebViewElement(matcher, element);
+  const innerElement = await switchToWebViewElement(matcher, element);
   switch (expectation) {
     case 'toExist':
       await expect(innerElement).toExist();
@@ -69,7 +59,7 @@ const expectWebElement = async (matcher, element, expectation, text = '') => {
 }
 
 const interactWebElement = async (matcher, element, interaction, text = '') => {
-  await switchToWebViewElement(matcher, element);
+  const innerElement = await switchToWebViewElement(matcher, element);
   switch (interaction) {
     case 'tap':
       await innerElement.tap();
