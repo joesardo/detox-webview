@@ -1,6 +1,6 @@
 {
   "name": "detox-webview",
-  "version": "1.0.6",
+  "version": "1.0.7",
   "description": "add on for wix/detox to assist with webview automation",
   "main": "index.js",
   "scripts": {
