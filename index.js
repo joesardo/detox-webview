@@ -42,15 +42,15 @@ const switchToWebViewElement = async (matcher, element) => {
 const expectWebElement = async (matcher, element, expectation, text = '') => {
   await this.switchToWebViewElement(matcher, element);
   switch (expectation) {
-    case toExist:
+    case 'toExist':
       await expect(this.innerElement).toExist();
       break;
   
-    case notToExist:
+    case 'notToExist':
       await expect(this.innerElement).not.toExist();
       break;
     
-    case toHaveText:
+    case 'toHaveText':
       if (text != '') {
         await expect(this.innerElement).toHaveText(text);
       } else {
@@ -58,7 +58,7 @@ const expectWebElement = async (matcher, element, expectation, text = '') => {
       }
       break;
     
-    case notToHaveText:
+    case 'notToHaveText':
       if (text != '') {
         await expect(this.innerElement).not.toHaveText(text);
       } else {
@@ -71,11 +71,11 @@ const expectWebElement = async (matcher, element, expectation, text = '') => {
 const interactWebElement = async (matcher, element, interaction, text = '') => {
   await this.switchToWebViewElement(matcher, element);
   switch (interaction) {
-    case tap:
+    case 'tap':
       await this.innerElement.tap();
       break;
   
-    case typeText:
+    case 'typeText':
       if (text != '') {
         await this.innerElement.typeText(text);
       } else {
@@ -83,7 +83,7 @@ const interactWebElement = async (matcher, element, interaction, text = '') => {
       }
       break;
     
-    case replaceText:
+    case 'replaceText':
       if (text != '') {
         await this.innerElement.replaceText(text);
       } else {
@@ -91,35 +91,35 @@ const interactWebElement = async (matcher, element, interaction, text = '') => {
       }
       break;
     
-    case clearText:
+    case 'clearText':
       await this.innerElement.clearText();
       break;
     
-    case selectAllText:
+    case 'selectAllText':
       await this.innerElement.selectAllText();
       break;
     
-    case getText:
+    case 'getText':
       await this.innerElement.getText();
       break;
     
-    case scrollToView:
+    case 'scrollToView':
       await this.innerElement.scrollToView();
       break;
     
-    case focusElement:
+    case 'focusElement':
       await this.innerElement.focus();
       break;
     
-    case moveCursorToEnd:
+    case 'moveCursorToEnd':
       await this.innerElement.moveCursorToEnd();
       break;
     
-    case getCurrentUrl:
+    case 'getCurrentUrl':
       await this.innerElement.getCurrentUrl();
       break;
     
-    case getTitle:
+    case 'getTitle':
       await this.innerElement.getTitle();
       break;
   }
