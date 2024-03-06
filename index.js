@@ -6,35 +6,35 @@ let innerElement;
 const switchToWebViewElement = async (matcher, element) => {
   switch (matcher) {
     case 'id':
-      innerElement = web.element(by.web.id(element));
+      this.innerElement = web.element(by.web.id(element));
       break;
   
     case 'className':
-      innerElement = web.element(by.web.className(element));
+      this.innerElement = web.element(by.web.className(element));
       break;
     
     case 'cssSelector':
-      innerElement = web.element(by.web.cssSelector(element));
+      this.innerElement = web.element(by.web.cssSelector(element));
       break;
 
     case 'elementName':
-      innerElement = web.element(by.web.name(element));
+      this.innerElement = web.element(by.web.name(element));
       break;
     
     case 'xpath':
-      innerElement = web.element(by.web.xpath(element));
+      this.innerElement = web.element(by.web.xpath(element));
       break;
     
     case 'href':
-      innerElement = web.element(by.web.href(element));
+      this.innerElement = web.element(by.web.href(element));
       break;
 
     case 'hrefContains':
-      innerElement = web.element(by.web.hrefContains(element));
+      this.innerElement = web.element(by.web.hrefContains(element));
       break;
     
     case 'tag':
-      innerElement = web.element(by.web.tag(element));
+      this.innerElement = web.element(by.web.tag(element));
       break;
   }
 }
