@@ -33,7 +33,8 @@ const expectWebElement = async (matcher, element, expectation, text = '') => {
   const innerElement = await switchToWebViewElement(matcher, element);
   switch (expectation) {
     case 'toExist':
-      await expect(innerElement).toExist();
+      const test = web.element(by.web.name(element));
+      await expect(test).toExist();
       break;
   
     case 'notToExist':
